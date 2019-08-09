@@ -23,13 +23,31 @@ public class CalcApp {
 				continue;
 			}
 			
-
+			switch(tokens[1]) {
+			case "+" :
+				Add add = new Add();
+				add.setValue(tokens[0], tokens[2]);
+				add.calculate();
+				continue;
 			
-			/*  코드를 완성 합니다 */
-			
-			
-			
-			
+			case "-" :
+				Sub sub = new Sub();
+				sub.setValue(tokens[0], tokens[2]);
+				sub.calculate();
+				continue;
+			case "*" :
+				Mul mul = new Mul();
+				mul.setValue(tokens[0], tokens[2]);
+				mul.calculate();
+				continue;
+			case "/" :
+				Div div = new Div();
+				div.setValue(tokens[0], tokens[2]);
+				div.calculate();
+				continue;
+			default :
+				System.out.println("오류");
+			}
 		}
 		
 		scanner.close();
